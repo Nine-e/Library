@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>index.html</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="..\css\index.css" rel="stylesheet">
+
+		<script type="text/javascript" src="../lib/jquery.js"></script>
+	</head>
+	<body>
+		<iframe name="content_frame" marginwidth=0 marginheight=0 width=100% height=100 src="top.html" frameborder=0 scrolling="no"></iframe>
+		<div class="g-bd">
+			<div style="background: #94ae77;height:25px;width:100%;"></div>
+			<div class="m-content">
+				<input class="u-text" type="text" name="search" value="检索内容">
+				<input class="btn-search" type="button"onclick="location='search.html'" value="检   索">
+				<br>
+				<input type="radio" name="select" checked="checked"/>任意词
+				<input type="radio" name="select" />题名
+				<input type="radio" name="select" />ISBN
+				<input type="radio" name="select" />著者
+				<input type="radio" name="select" />分类号
+				<input type="radio" name="select" />出版社
+				<input type="radio" name="select" />索书号	
+			</div>
+		</div>
+		<div style="height:100px"></div>
+		<iframe name="content_frame" marginwidth=0 marginheight=0 width=100% height=150 src="bottom.html" frameborder=0 scrolling="no" align="bottom"></iframe>
+		<script type="text/javascript">
+			$(function(){
+				console.log($(".u-text").val());
+				$(".u-text").focus(function(){
+					if($(this).val() == "检索内容"){
+						$(this).val("");
+					}
+				});
+				$(".u-text").blur(function(){
+					if($(this).val() == ""){
+						$(this).val("检索内容");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

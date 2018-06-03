@@ -1,0 +1,32 @@
+html,body,div,h1,h2,h3,h4,h5,h6,ul,li{margin:0;padding:0;}
+div,ul,li,input{font-size: 14px;font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:none;}
+body{
+	background: url(background.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.g-bd{
+	width: 800px;
+	height: 165px;
+	margin:120px auto;
+	background: #fff;
+}
+.m-content{
+	width:585px;
+	margin:40px auto;
+}
+.u-text{
+	display: inline-block;
+	width:445px;
+	height:45px;
+	padding:0 20px;
+	font-size: 17px;
+	outline:none;
+}
+.btn-search{
+	display: inline-block;
+	width:90px;
+	height:49px;
+	background-color: #fff;
+	border:solid 1px black;
+	cursor: pointer;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>top</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="" rel="stylesheet">
+		<link href="..\css\top.css" rel="stylesheet">
+		<link href="..\lib\font-awesome\css\font-awesome.css" rel="stylesheet">
+	</head>
+	<body>
+		<script type="text/javascript" src="../lib/jquery.js"></script>
+		<div class="g-topbar">
+			<h1 class="u-logo">杭师图书馆</h1>
+			<ul class="m-nav">
+				<li class="m-nav-list" style="background-color:#39432d"><a href=""><span>资&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp源</span><br><span>RESOURCES</span></a>
+				</li>
+				<li class="m-nav-list"><a href=""><span>服&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp务</span><br><span>SERVICES</span></a>
+				</li>
+				<li class="m-nav-list"><a href=""><span>资&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp讯</span><br><span>NEWS</span></a>
+				</li>
+				<li class="m-nav-list"><a href=""><span>概&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp况</span><br><span>OVERVIEW</span></a>
+				</li>
+				<li class="m-nav-list"><a href=""><span>专&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp题</span><br><span>TOPICS</span></a>
+				</li>
+			</ul>
+			<div class="m-sc">
+				<div class="m-search">
+					<i class="fa fa-search"></i>
+					<input type="text" id="inputSearch" value="全站检索"/>
+				</div>
+			</div>
+			<span class="u-login"><a target="_parent" href="login.html" id="btn-login">登 录</a> | <a target="_parent" href="signup.html"  id="btn-signup">注 册</a></span>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".m-nav li").mouseover(function(){
+					var index = $(this).index();
+						$(".m-nav-list a").eq(index).css('color','white');
+				});
+				$(".m-nav li").mouseout(function(){
+					var index = $(this).index();
+						$(".m-nav-list a").eq(index).css('color','#aaa');
+				});
+				$("#inputSearch").focus(function(){
+					if($(this).val() == "全站检索"){
+						$(this).val("");
+					}
+				});
+				$("#inputSearch").blur(function(){
+					if($(this).val() == ""){
+						$(this).val("全站检索");
+					}
+					console.log("emm");
+				});
+			});
+		</script>
+	</body>
+</html>

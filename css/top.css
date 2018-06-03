@@ -1,0 +1,74 @@
+body,div,h1,h2,h3,h4,h5,h6,ul,li{margin:0;padding:0;}
+div,ul,li,input{font-size: 14px;color:#aaa;}
+a{text-decoration: none;}
+input{border:0;outline:none;}
+.g-topbar{
+	padding:0 50px;
+	background-color: #424c35;
+	height:100px;
+	min-width: 1200px;
+	overflow-x: auto;
+}
+.u-logo{
+	float:left;
+	padding:0 30px 0 25px;
+	color:white;
+	line-height: 100px;
+	font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:none;
+}
+.m-nav{}
+.m-nav-list{
+	float:left;
+	padding:0 19px;
+	list-style: none;
+	cursor:pointer;
+}
+.m-nav-list:hover{
+	background-color:#39432d;
+	transition:all 0.1s linear;
+}
+.m-nav-list a{
+	display: inline-block;
+	text-align: center;
+	padding: 30px 18px;
+	color:#aaa;
+}
+.m-nav-list a:hover{
+	color:white;
+	transition:all 0.1s linear;
+}
+.m-sc {
+	margin:0 0 0 25px;
+	float:left;
+	display:flex;
+	align-items: center;
+	height:100%;
+}
+.m-search{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	height:32px;
+	border-radius: 15px;
+	background-color: white;
+}
+.m-search input{
+	margin-right: 10px;
+	font-size:12px;
+}
+.m-search i{margin:10px;}
+.u-login{
+	float: right;
+	line-height: 100px;
+}
+.u-login a{
+	color: #aaa;
+}
+#btn-login:hover{
+	color:#fff;
+	transition: color 0.1s linear;
+}
+#btn-signup:hover{
+	color:#fff;
+	transition: color 0.1s linear;
+}

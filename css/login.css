@@ -1,0 +1,117 @@
+@charset "UTF-8";
+body {
+ 	font-family: Century Gothic;
+ 	background: url(background.jpg) no-repeat;
+ 	background-size: 100% 100%;
+}
+.content {
+	padding:20px 0 0 0 ;
+	width:544px;
+	margin:auto;
+    margin-top:90px;
+    background-color: white;
+}
+/*----------------------------*/
+.wizard-containter-sign{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 544px;
+	margin:auto;
+	margin-top: 20px;
+}
+.wizard-title{
+	text-align: center;
+	width: 100%;
+}
+.text-discribe{
+	font-size: 2.2em;
+	color:#b3b3b3;
+}
+/*----*/
+.lazy{
+	width:264px;
+}
+
+.sign-massage-list p{
+	margin:15px 0 0 0;
+	color:#979797;
+	font-size: 0.75em;
+	font-weight: bold;
+}
+.sign-massage-list input,.form-control{
+	width:100%;
+	height:36px;
+	border:solid 2px #ebebeb;
+	font-size: 0.75em;
+}
+.sign-massage-list select{
+	border-radius: 1px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.select-massage{
+	display: flex;
+}
+.select-massage i{
+	font-size:1.6em;
+	color:#65d0a2;
+	margin:7px 0 0 -27px;
+}
+/*---------*/
+.wizard-containter-link{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.wizard-containter-link a{ 
+	text-decoration: none;
+	text-align: center;
+}
+.wizard-containter-link p{
+	margin: 33px 0 -18px 0;
+	color:#666666;
+}
+.btn-continue{
+	height:44px;
+	width: 222px;
+	margin:45px 0 0 0;
+	background-color: #94ae77;
+	color:white;
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 44px;
+	text-align: center;
+	/*cursor: pointer;*/
+}
+.continue-explain {
+	margin:0 0 0 12%;
+	width:280px;
+	text-align: center;
+	font-size:3px;
+	-webkit-transform-origin-x: 0;
+	-webkit-transform: scale(0.70);
+}
+.continue-explain p{
+	margin:0;
+	color:#c3c3c3;
+}
+
+/*------------------SIGN UP---------------------*/
+#signup-btn-facebook{
+	margin:25px 0 0 0;
+}
+#signup-btn-continue{
+	width:100%;
+	margin:40px 0 0 0;
+}
+#signup-bottom{
+	margin-bottom:25px;
+}
+/*--------------------LOGIN-------------------*/
+#login-btn{
+	/*width:100%;*/
+	margin-bottom:45px;
+}
