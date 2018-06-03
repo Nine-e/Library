@@ -4,7 +4,7 @@ function ToSignUp() {
     if (email && password) {
         $.ajax({
             type: "GET", //提交方式  
-            url: "http://localhost:8000/server.js", //路径  
+            url: "http://localhost:8000/nodejs/login.js", //路径  
             data: {
                 "email": email,
                 "password": password
@@ -31,4 +31,4 @@ function ToSignUp() {
     }
 
 }
-$('body').delegate('.signipbtn', 'click', ToSignUp);
+$('body').delegate('#login-btn', 'click', ToSignUp);

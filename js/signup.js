@@ -1,23 +1,41 @@
-var Memcached = require('memcached');
-var memcached = new Memcached('127.0.0.1:11211');
+function ToSignUp() {
+    var email = $('#emailText').val(),
+        password = $('#passwordText').val();
+    
+    email.trim();
+    password.trim();
 
-var signupBtn = document.getElementById('signup-btn-continue');
+    var re = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    var tt = false;
 
-signupBtn.addEventListener('click', function(e) {
-	var email = document.getElementById('emailText').value;
-	var password = document.getElementById('passwordText').value;
-	//console.log(email);
-	memcached.get(email, function(err, result) {
-		if (err) console.error(err);
-		//console.log(result);
-		if (result) {
-			alter("this emial is existed!");
-		} else {
-			memcached.set(email, password, 10000, function(err, result) {
-				if (err) console.error(err);
-				console.log(result);
-			});
-		}
-		memcached.end();
-	});
-});
+    if (re.test(email)) {
+        tt = true;
+    }
+
+    if ( email && password && tt) {
+        $.ajax({
+            type: "GET", //提交方式  
+            url: "http://localhost:8000/nodejs/signup.js" //路径  
+            data: {
+                "email": email,
+                "password": password
+            },
+            //数据，这里使用的是Json格式进行传输  
+            success: function(result) {
+                //返回数据根据结果进行相应的处理 
+                var ans = result.search(email)
+                if (ans >= 0) {
+                    window.location.href = "../html/login.html"
+                } else {
+                   alert("This account already exists");
+                }
+            }
+
+        });
+    } else {
+        alert("Format error & Empty data");
+
+    }
+
+}
+$('body').delegate('#signup-btn-continue', 'click', ToSignUp);
