@@ -1,20 +1,34 @@
-var Memcached = require('memcached');
-var memcached = new Memcached('127.0.0.1:11211');
+function ToSignUp() {
+    var email = $('#emailText').val(),
+        password = $('#passwordText').val();
+    if (email && password) {
+        $.ajax({
+            type: "GET", //提交方式  
+            url: "http://localhost:8000/server.js", //路径  
+            data: {
+                "email": email,
+                "password": password
+            },
+            datatype: "string",
+            //数据，这里使用的是Json格式进行传输  
+            success: function(result) { //返回数据根据结果进行相应的处理
+                var s = result,
+                    l;
+                l = s.length;
+                var ans = s.search(email)
+                if (ans >= 0) {
+                    //alert("yeah");
+                    window.location.href = "../html/index.html"
+                } else {
+                    alert("Not exsit or wrong user");
 
-var loginBtn = document.getElementById('login-btn');
+                }
+            }
 
-loginBtn.addEventListener('click', function(e) {
-	var email = document.getElementById('emailText').value;
-	var password = document.getElementById('passwordText').value;
-	//console.log(email);
-	memcached.get(email, function(err, result) {
-		if (err) console.error(err);
-		//console.log(result);
-		if(result==password){
-			window.location.href='../html/index.html';
-		}else{
-			alter("fail to login!");
-		}
-		memcached.end();
-	});
-});
+        });
+    } else {
+        alert("Format error & Empty data");
+    }
+
+}
+$('body').delegate('.signipbtn', 'click', ToSignUp);
