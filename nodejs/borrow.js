@@ -5,7 +5,7 @@ var redis = require('redis'),
 
 app.get('/html/borrow', function(req, res) {
 	var email = req.query.email;
-	
+
 	client.on('connect', function() {
 		client.hmset('1', {
 			'js': 'javascript',

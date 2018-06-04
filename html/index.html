@@ -3,12 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>index.html</title>
+		<title>index-emm.html</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link href="..\css\index.css" rel="stylesheet">
 
 		<script type="text/javascript" src="../lib/jquery.js"></script>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+		<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
 	</head>
 	<body>
 		<iframe name="content_frame" marginwidth=0 marginheight=0 width=100% height=100 src="top.html" frameborder=0 scrolling="no"></iframe>
@@ -16,7 +19,9 @@
 			<div style="background: #94ae77;height:25px;width:100%;"></div>
 			<div class="m-content">
 				<input class="u-text" type="text" name="search" value="检索内容">
-				<input class="btn-search" type="button"onclick="location='search.html'" value="检   索">
+				<div id="example" style="display: inline-block;">
+				<!-- <input class="btn-search" type="button"onclick="location='search.html'" value="检   索"> -->
+				</div>
 				<br>
 				<input type="radio" name="select" checked="checked"/>任意词
 				<input type="radio" name="select" />题名
@@ -44,5 +49,64 @@
 				});
 			});
 		</script>
+		<script type="text/babel">
+			var ReactButton = React.createClass({
+	            getDefaultProps:function(){
+	                return{
+	                    pattern:'Search'
+	                };
+	            },
+	            getInitialState:function(){
+	                return{
+	                    color:'black',
+						backgroundColor: '#fff',
+						border:'solid 1px #94ae77'
+	                };
+	            },
+	            handleMouseover:function(){
+	                this.setState({
+	                    color:'white',
+						backgroundColor: '#94ae77',
+						border:'0'
+	                });
+	            },
+	            handleMouseout:function(){
+	                this.setState({
+	                    color:'black',
+						backgroundColor: '#fff',
+						border:'solid 1px #94ae77'
+	                });
+	            },
+	            handle(){
+	            	const w=window.open('about:blank');
+					w.location.href='search.html'
+	            },
+	            render:function(){
+	                var styles={
+	                    Search:{
+	                    	backgroundColor:this.state.backgroundColor,
+	                    	color:this.state.color,
+	                        display: 'inline-block',
+							width:'90',
+							height:'49',
+							border:this.state.border,
+							cursor: 'pointer',
+	                    },
+	         
+	                };
+	                return(
+	                     
+	                     <input style={styles[this.props.pattern]}  onMouseOver={this.handleMouseover} onMouseOut={this.handleMouseout} type="button" onClick={this.handle} value="检   索" />
+	                     );
+
+	             }
+	        });
+
+	        ReactDOM.render(
+		        <ReactButton pattern='Search'>Search</ReactButton>,
+		        document.getElementById('example')
+	        );
+		</script>
 	</body>
 </html>
+
