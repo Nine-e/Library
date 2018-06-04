@@ -7,11 +7,11 @@ var memcached = new Memcached('127.0.0.1:11211');
 app.get('/html/signup', function(req, res) {
 	var email = req.query.email;
 	var password = req.query.password;
-	memcached.get(email, function(err, result) {
+	memcached.get(email, function(err, result1) {
 		if (err) console.error(err);
 		//console.log(result);
-		if (result) {
-			res.end(false);
+		if (result1) {
+			res.end();
 		} else {
 			memcached.set(email, password, 10000, function(err, result) {
 				if (err) console.error(err);
